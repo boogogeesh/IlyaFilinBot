@@ -11,6 +11,8 @@ def repeat_all_messages(message):
         bot.send_message(message.chat.id, random.choice(['пись', 'пись)', 'пись))','пись))00)0']))
     if "илья" in message.text.lower() and "гей" in message.text.lower():
         bot.send_message(message.chat.id, "нет ты(")
+    if "мияги" in message.text.lower():
+        bot.send_message(message.chat.id, "мияяяяяги")
 
 if __name__ == '__main__':
     bot.polling(none_stop=True)
