@@ -1,10 +1,9 @@
-token = '445485615:AAGPAA1mqEVWZhdRuy4PlC-hnJGpmbv9N6U'
-
+import config
 import telebot
 import time
 import random
 
-bot = telebot.TeleBot(token)
+bot = telebot.TeleBot(config.token)
 @bot.message_handler(content_types=["text"])
 def repeat_all_messages(message):
     time.sleep(1)
