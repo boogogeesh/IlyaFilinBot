@@ -1,3 +1,3 @@
 # IlyaFilinBot
 
->>> pip install pytelegrambotapi
+pip install pytelegrambotapi
