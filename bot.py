@@ -13,7 +13,7 @@ def repeat_all_messages(message):
     if "пис" in message.text.lower():
         bot.send_message(message.chat.id, random.choice(['пись', 'пись)', 'пись))', 'пись))00)0']))
     if "илья" in message.text.lower() and "гей" in message.text.lower():
-        bot.send_message(message.chat.id, "нет ты(")
+        bot.send_sticker(message.chat.id, "CAADAgAD0gMAAgwWHwL2Lqda-jMVBAI")
     if re.search(r'м+и+я+г+и+', message.text.lower()):
         bot.send_message(message.chat.id, "мияяяяяги")
 
