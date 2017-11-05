@@ -9,9 +9,10 @@ from pikabu import get_pikabu_post_link
 bot = telebot.TeleBot(config.token)
 
 YOBA_CONFUSED = "CAADAgAD0gMAAgwWHwL2Lqda-jMVBAI"
-YOBA_GLAD = "AAQCABP5yFkqAATiX90FYWOD--MnAAIC"
+YOBA_GLAD = "CAADAgAD6AMAAgwWHwIOqWgUfLdNNQI"
 
-@bot.message_handler()
+
+@bot.message_handler(content_types=["text"])
 def repeat_all_messages(message):
     time.sleep(1)
     processed_msg = message.text.lower()
@@ -27,6 +28,6 @@ def repeat_all_messages(message):
         bot.send_message(message.chat.id, get_pikabu_post_link())
         bot.send_sticker(message.chat.id, YOBA_GLAD)
 
+
 if __name__ == '__main__':
     bot.polling(none_stop=True)
-

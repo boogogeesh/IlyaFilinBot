@@ -11,5 +11,5 @@ def get_pikabu_post_link():
     html = BeautifulSoup(page.content, "lxml")
     posts = html.find_all('a', attrs={'class': "story__title-link "}, href=True)
     post = random.choice(posts[1:])
-    return post['href']
+    return post['href'] if len(posts) != 0 else ""
 
