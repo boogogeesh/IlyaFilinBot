@@ -12,6 +12,15 @@ bot = telebot.TeleBot(config.token)
 YOBA_CONFUSED = "CAADAgAD0gMAAgwWHwL2Lqda-jMVBAI"
 YOBA_GLAD = "CAADAgAD6AMAAgwWHwIOqWgUfLdNNQI"
 
+@bot.message_handler(commands=['help'])
+def handle_start_help(message):
+    bot.send_message(message.chat.id, "Дароу, я Илья. \n Мои команды: \n /pikabu")
+    
+@bot.message_handler(commands=['pikabu'])
+def handle_start_help(message):
+    bot.send_message(message.chat.id, "Конечно, брат, держи")
+    bot.send_message(message.chat.id, get_pikabu_post_link())
+    bot.send_sticker(message.chat.id, YOBA_GLAD)
 
 @bot.message_handler(content_types=["text"])
 def repeat_all_messages(message):
@@ -27,8 +36,6 @@ def repeat_all_messages(message):
         if "как дела" in processed_msg:
             bot.send_message(message.chat.id, "Хорошо")
             bot.send_message(message.chat.id, "А у тебя?")
-            bot.send_message(message.chat.id, get_pikabu_post_link())
-            bot.send_sticker(message.chat.id, YOBA_GLAD)
 
     except:
         traceback.print_exc(file=sys.stdout)
