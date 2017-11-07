@@ -12,10 +12,12 @@ bot = telebot.TeleBot(config.token)
 YOBA_CONFUSED = "CAADAgAD0gMAAgwWHwL2Lqda-jMVBAI"
 YOBA_GLAD = "CAADAgAD6AMAAgwWHwIOqWgUfLdNNQI"
 
+
 @bot.message_handler(commands=['help'])
 def handle_start_help(message):
     bot.send_message(message.chat.id, "Дароу, я Илья. \n Мои команды: \n /pikabu")
-    
+
+
 @bot.message_handler(commands=['pikabu'])
 def handle_start_help(message):
     try:
@@ -24,9 +26,11 @@ def handle_start_help(message):
         bot.send_sticker(message.chat.id, YOBA_GLAD)
 
     except:
+        print("Pikabu exception occurred with following stacktrace:")
+        traceback.print_exc(file=sys.stdout)
         bot.send_message(message.chat.id, "Бля, чёт поломалось, не будет истории(")
 
-        
+
 @bot.message_handler(content_types=["text"])
 def repeat_all_messages(message):
     try:
