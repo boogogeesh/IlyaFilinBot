@@ -18,10 +18,15 @@ def handle_start_help(message):
     
 @bot.message_handler(commands=['pikabu'])
 def handle_start_help(message):
-    bot.send_message(message.chat.id, "Конечно, брат, держи")
-    bot.send_message(message.chat.id, get_pikabu_post_link())
-    bot.send_sticker(message.chat.id, YOBA_GLAD)
+    try:
+        bot.send_message(message.chat.id, "Конечно, брат, держи")
+        bot.send_message(message.chat.id, get_pikabu_post_link())
+        bot.send_sticker(message.chat.id, YOBA_GLAD)
 
+    except:
+        bot.send_message(message.chat.id, "Бля, чёт поломалось, не будет истории(")
+
+        
 @bot.message_handler(content_types=["text"])
 def repeat_all_messages(message):
     try:
