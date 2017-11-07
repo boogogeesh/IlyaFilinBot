@@ -34,7 +34,7 @@ def repeat_all_messages(message):
         processed_msg = message.text.lower()
         if "пис" in processed_msg:
             bot.send_message(message.chat.id, random.choice(['пись', 'пись)', 'пись))', 'пись))00)0']))
-        if "илья" in processed_msg and "гей" in message.text.lower():
+        if "илья" in processed_msg and "гей" in processed_msg:
             bot.send_sticker(message.chat.id, YOBA_CONFUSED)
         if re.search(r'м+и+я+г+и+', processed_msg):
             bot.send_message(message.chat.id, "мияяяяяги")
