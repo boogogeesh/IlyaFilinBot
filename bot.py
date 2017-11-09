@@ -4,6 +4,7 @@ import time
 import random
 import re
 import sys, traceback
+import quotes
 
 from pikabu import get_pikabu_post_link
 
@@ -16,6 +17,10 @@ YOBA_GLAD = "CAADAgAD6AMAAgwWHwIOqWgUfLdNNQI"
 @bot.message_handler(commands=['help'])
 def handle_start_help(message):
     bot.send_message(message.chat.id, "Дароу, я Илья. \n Мои команды: \n /pikabu")
+    
+@bot.message_handler(commands=['quote'])
+def handle_start_help(message):
+    bot.send_message(message.chat.id, random.choice(quotes.list))
 
 
 @bot.message_handler(commands=['pikabu'])
