@@ -45,9 +45,6 @@ def repeat_all_messages(message):
             bot.send_sticker(message.chat.id, YOBA_CONFUSED)
         if re.search(r'м+и+я+г+и+', processed_msg):
             bot.send_message(message.chat.id, "мияяяяяги")
-        if "как дела" in processed_msg:
-            bot.send_message(message.chat.id, "Хорошо")
-            bot.send_message(message.chat.id, "А у тебя?")
 
     except:
         traceback.print_exc(file=sys.stdout)
